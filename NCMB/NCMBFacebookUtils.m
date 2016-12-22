@@ -14,16 +14,8 @@
  limitations under the License.
  */
 
-//FacebookSDKがincludeされているアプリの場合のみビルドする
-#if defined(__has_include)
-#if __has_include(<FacebookSDK/FacebookSDK.h>) || __has_include(<FBSDKLoginKit/FBSDKLoginKit.h>)
-
-#if __has_include(<FacebookSDK/FacebookSDK.h>)
-@import FacebookSDK;
-#else
-@import FacebookCoreKit;
+@import FBSDKCoreKit;
 @import FBSDKLoginKit;
-#endif
 
 #import "NCMBFacebookUtils.h"
 #import "NCMBUser+Private.h"
@@ -500,6 +492,3 @@ withPublishingPermission:(NSArray *)readPermission
 }
 
 @end
-
-#endif
-#endif
